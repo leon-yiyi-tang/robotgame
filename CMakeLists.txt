@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(RobotGame)
 
-SET(SRC_LIST src/CommandFactory.cpp 
+SET(SRC_LIST 
+        src/CommandFactory.cpp 
         src/Direction.cpp 
         src/GameApp.cpp 
         src/GameTable.cpp 
@@ -16,4 +17,6 @@ SET(SRC_LIST src/CommandFactory.cpp
     )
 
 # add the executable
-add_executable(RobotGame SRC_LIST)
+add_executable(RobotGame ${SRC_LIST})
+
+
