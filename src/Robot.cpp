@@ -45,7 +45,7 @@ void Robot::place(int x, int y, DIRECTION facingDirection)
 
 void Robot::rotate(bool clockWise)
 {
-    DIRECTION direction = clockWise ? nextAntiClockWiseDirection(m_facingDirection)
+    DIRECTION direction = clockWise ? nextClockWiseDirection(m_facingDirection)
                                     : nextAntiClockWiseDirection(m_facingDirection);
     setFacingDirection(direction);
 }

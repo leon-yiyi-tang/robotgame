@@ -24,9 +24,15 @@ public:
         return ss.str().data();
     }
 
+    string toString() const {
+        stringstream ss;
+        ss << m_cmd << ": " << m_msg;
+        return ss.str();
+    }
+
 private:
-    const char* m_cmd; //TODO: is it the right way
-    const char* m_msg;
+    string m_cmd; //TODO: is it the right way
+    string m_msg;
 
 };
 

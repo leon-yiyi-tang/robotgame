@@ -42,9 +42,9 @@ CommandPtr CommandFactory::parseCommand(const string &cmdStr)
     switch (cmdType) {
     case CMD_PLACE: {
         if (argList.size() == 3) {
-            int x = stoi(argList[0]);
-            int y = stoi(argList[1]);
-            DIRECTION direction = parseDirection(argList[2]);
+            int x = stoi(helper::trim(argList[0]));
+            int y = stoi(helper::trim(argList[1]));
+            DIRECTION direction = parseDirection(helper::trim(argList[2]));
             if (direction == DIRECTION_UNKNOWN ) {
                 throw CmdException("Invalid command", cmdStr.data());
             }

@@ -53,6 +53,10 @@ int main(int argc, char** argv)
         cout << "Please enter a command:" << endl;
         //cin >> line;
         getline(cin, line);
+        if (isQuitCmd(line)) {
+            quit = true;
+            break;
+        }
 
         try {
 
@@ -63,7 +67,7 @@ int main(int argc, char** argv)
         } catch(NoRobotException e1) {
             cout << e1.what() << endl;
         } catch(CmdException cmdException) {
-            cout << cmdException.what() << endl;
+            cout << cmdException.toString() << endl;
         } catch (exception e2) {
             cout << e2.what() << endl;
         }
