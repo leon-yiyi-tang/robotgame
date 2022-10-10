@@ -7,6 +7,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 GameTable::GameTable(int width, int height)
     :m_width(width),m_height(height)
 {
@@ -62,7 +65,7 @@ void GameTable::moveRobot()
 
     Position newPos = tryMoveRobot();
     if (!isValidPosition(newPos)) {
-        throw CmdException("Move", "Invalid Position");
+        throw CmdException("Move", "Robot reached edge, cannot move furthur");
     } else {
         m_robot->setPosition(newPos);
     }
@@ -93,8 +96,12 @@ string GameTable::reportStatus() const
     }
 
     stringstream ss;
-    ss << "X:" << m_robot->x() << ", Y:" << m_robot->y() << ", F:" << printDirection(m_robot->facingDirection());
+    ss << "Output:" << m_robot->x() << "," << m_robot->y() << "," << printDirection(m_robot->facingDirection());
 
     return ss.str();
 }
+
+
+}
+
 

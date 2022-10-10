@@ -1,9 +1,11 @@
 #include "GameApp.h"
 
 
-
 #define TABLE_WIDTH 5
 #define TABLE_HEIGHT 5
+
+namespace robotgame {
+
 
 GameApp::GameApp()
 {
@@ -21,4 +23,6 @@ void GameApp::processCommand(const Command &cmd)
     //if (cmd.isPlaceCommand() || hasRobotPlaced()){
         cmd.visit(*m_table);
     //}
+}
+
 }

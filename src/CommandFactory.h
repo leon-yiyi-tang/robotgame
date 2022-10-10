@@ -3,6 +3,9 @@
 
 #include "Command.h"
 
+namespace robotgame {
+
+
 class CommandFactory
 {
 public:
@@ -20,5 +23,7 @@ public:
     static CmdType translate(const string& cmdName);
 
 };
+
+}
 
 #endif // COMMANDFACTORY_H

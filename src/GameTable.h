@@ -7,6 +7,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 class GameTable
 {
 public:
@@ -32,5 +35,6 @@ private:
 
 typedef unique_ptr<GameTable> GameTablePtr;
 
+}
 
 #endif // GAMETABLE_H

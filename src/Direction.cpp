@@ -7,6 +7,8 @@ static const char* SOUTH = "SOUTH";
 static const char* NORTH = "NORTH";
 static const char* UNKNOWN = "UNKNOWN";
 
+namespace robotgame {
+
 const char* printDirection(DIRECTION direction)
 {
     switch (direction) {
@@ -42,4 +44,6 @@ DIRECTION parseDirection(const string& dirStr) {
     }
 
     return DIRECTION_UNKNOWN;
+}
+
 }

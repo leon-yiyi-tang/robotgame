@@ -5,6 +5,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 enum DIRECTION {
     DIRECTION_EAST,
     DIRECTION_WEST,
@@ -18,5 +21,6 @@ enum DIRECTION {
 const char* printDirection(DIRECTION direction);
 DIRECTION parseDirection(const string& dirStr);
 
+}
 
 #endif // DIRECTION_H

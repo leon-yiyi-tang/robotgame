@@ -5,6 +5,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 class NoRobotException : public exception {
 
 public:
@@ -13,6 +16,8 @@ public:
     }
 
 };
+
+}
 
 
 #endif // NOROBOTEXCEPTION_H

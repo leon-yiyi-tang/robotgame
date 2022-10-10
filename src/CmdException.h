@@ -9,6 +9,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 class CmdException : public exception {
 
 public:
@@ -35,6 +38,8 @@ private:
     string m_msg;
 
 };
+
+}
 
 
 #endif // CMDEXCEPTION_H

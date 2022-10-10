@@ -3,6 +3,9 @@
 #include <sstream>
 #include "GameTable.h"
 
+namespace robotgame {
+
+
 RotateCommand::RotateCommand(bool clockWise)
     :m_clockWise(clockWise)
 {
@@ -22,4 +25,6 @@ string RotateCommand::toString() const
     ss << "Rotate : " << (m_clockWise ? "right":"left");
 
     return ss.str() ;
+}
+
 }

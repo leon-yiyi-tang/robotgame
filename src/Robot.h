@@ -8,6 +8,8 @@
 
 using namespace std;
 
+namespace robotgame {
+
 class Robot
 {
 public:
@@ -42,5 +44,7 @@ private:
 };
 
 typedef unique_ptr<Robot> RobotPtr;
+
+}
 
 #endif // ROBOT_H

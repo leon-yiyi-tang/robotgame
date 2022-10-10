@@ -9,7 +9,7 @@
 #include "NoRobotException.h"
 
 using namespace std;
-
+using namespace robotgame;
 
 void printHelp(const char* appName) {
     cout << "Usage: " << appName << " [-h]  " << endl;
@@ -47,14 +47,11 @@ int main(int argc, char** argv)
 
     GameApp app;
 
-    bool quit = false;
     string line;
     do {
         cout << "Please enter a command:" << endl;
-        //cin >> line;
         getline(cin, line);
-        if (isQuitCmd(line)) {
-            quit = true;
+        if ((!cin) || line.empty() || isQuitCmd(line) ) {
             break;
         }
 
@@ -72,7 +69,7 @@ int main(int argc, char** argv)
             cout << e2.what() << endl;
         }
 
-    } while (!quit);
+    } while (1);
 
     return 0;
 }

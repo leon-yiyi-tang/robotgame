@@ -10,6 +10,8 @@
 
 using namespace std;
 
+namespace robotgame {
+
 namespace helper {
 
 const string WHITESPACE = " \n\r\t\f\v";
@@ -36,6 +38,8 @@ void split(const string& text, vector<string>& result, char c) {
     while (getline(ss, word, c)) {
         result.push_back(word);
     }
+}
+
 }
 
 }

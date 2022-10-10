@@ -15,6 +15,9 @@ static const char* LEFT = "LEFT";
 static const char* RIGHT = "RIGHT";
 static const char* REPORT = "REPORT";
 
+namespace robotgame {
+
+
 CommandFactory::CommandFactory()
 {
 
@@ -89,4 +92,6 @@ CommandFactory::CmdType CommandFactory::translate(const string &cmdName)
     }
 
     return CMD_UNKNOWN;
+}
+
 }

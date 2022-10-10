@@ -3,6 +3,9 @@
 
 #include "Command.h"
 
+namespace robotgame {
+
+
 class RotateCommand : public Command
 {
 public:
@@ -16,5 +19,7 @@ public:
 private:
     bool m_clockWise;
 };
+
+}
 
 #endif // ROTATECOMMAND_H

@@ -7,6 +7,9 @@
 
 using namespace std;
 
+namespace robotgame {
+
+
 class GameApp
 {
 public:
@@ -19,5 +22,7 @@ public:
 private:
     GameTablePtr m_table;
 };
+
+}
 
 #endif // GAMEAPP_H

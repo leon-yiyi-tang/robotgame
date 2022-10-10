@@ -1,5 +1,7 @@
 #include "Robot.h"
 
+namespace robotgame {
+
 Robot::Robot(int x, int y, DIRECTION direction)
     :m_x(x), m_y(y), m_facingDirection(direction)
 {
@@ -86,3 +88,4 @@ DIRECTION Robot::nextAntiClockWiseDirection(DIRECTION direction)
     return DIRECTION_UNKNOWN;
 }
 
+}

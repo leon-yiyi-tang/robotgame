@@ -4,6 +4,9 @@
 #include "Command.h"
 #include "Direction.h"
 
+namespace robotgame {
+
+
 class PlaceCommand : public Command
 {
 public:
@@ -20,5 +23,7 @@ private:
     int m_y;
     DIRECTION m_direction;
 };
+
+}
 
 #endif // PLACECOMMAND_H

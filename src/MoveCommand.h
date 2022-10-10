@@ -3,6 +3,9 @@
 
 #include "Command.h"
 
+namespace robotgame {
+
+
 class MoveCommand : public Command
 {
 public:
@@ -11,5 +14,7 @@ public:
     void visit(GameTable& table) const;
 
 };
+
+}
 
 #endif // MOVECOMMAND_H
