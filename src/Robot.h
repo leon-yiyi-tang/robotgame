@@ -15,11 +15,11 @@ class Robot
 public:
     Robot(int x, int y, DIRECTION direction);
 
-    DIRECTION facingDirection() const;
+    DIRECTION getFacingDirection() const;
     void setFacingDirection(DIRECTION newFacingDirection);
-    int x() const;
+    int getX() const;
     void setX(int x);
-    int y() const;
+    int getY() const;
     void setY(int y);
 
     Position getPosition() const {

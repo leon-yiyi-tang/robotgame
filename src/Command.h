@@ -14,7 +14,18 @@ class GameTable;
 class Command
 {
 public:
+    enum CmdType {
+        CMD_PLACE,
+        CMD_MOVE,
+        CMD_LEFT,
+        CMD_RIGHT,
+        CMD_REPORT,
+        CMD_UNKNOWN = 255
+    };
+
+public:
     virtual ~Command(){}
+    virtual CmdType getType() const = 0;
     virtual void visit(GameTable& table) const = 0;
 };
 

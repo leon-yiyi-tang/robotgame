@@ -33,8 +33,10 @@ void parseArgs(int argc) {
     }
 }
 
+#define QUIT "QUIT"
+
 bool isQuitCmd(const string& cmd){
-    return cmd.compare("QUIT") == 0;
+    return cmd.compare(QUIT) == 0;
 }
 
 int main(int argc, char** argv)
@@ -51,8 +53,12 @@ int main(int argc, char** argv)
     do {
         cout << "Please enter a command:" << endl;
         getline(cin, line);
-        if ((!cin) || line.empty() || isQuitCmd(line) ) {
+        if ((!cin) || isQuitCmd(line) ) {
             break;
+        }
+
+        if (line.empty()) {
+            continue;
         }
 
         try {

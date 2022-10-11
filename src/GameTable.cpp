@@ -5,6 +5,9 @@
 #include "CmdException.h"
 #include "NoRobotException.h"
 
+#define MIN_X 0
+#define MIN_Y 0
+
 using namespace std;
 
 namespace robotgame {
@@ -22,8 +25,8 @@ bool GameTable::hasRobotPlaced() const
 
 bool GameTable::isValidPosition(const Position &pos)
 {
-    return pos.x >= 0 && pos.x <= m_width
-            && pos.y >= 0 && pos.y <= m_height;
+    return pos.x >= MIN_X && pos.x <= m_width
+            && pos.y >= MIN_Y && pos.y <= m_height;
 }
 
 void GameTable::checkRobotPlaced()
@@ -35,9 +38,9 @@ void GameTable::checkRobotPlaced()
 
 Position GameTable::tryMoveRobot()
 {
-    int x = m_robot->x();
-    int y = m_robot->y();
-    DIRECTION dirc = m_robot->facingDirection();
+    int x = m_robot->getX();
+    int y = m_robot->getY();
+    DIRECTION dirc = m_robot->getFacingDirection();
 
     switch (dirc) {
     case DIRECTION_EAST:
@@ -96,7 +99,7 @@ string GameTable::reportStatus() const
     }
 
     stringstream ss;
-    ss << "Output:" << m_robot->x() << "," << m_robot->y() << "," << printDirection(m_robot->facingDirection());
+    ss << "Output:" << m_robot->getX() << "," << m_robot->getY() << "," << printDirection(m_robot->getFacingDirection());
 
     return ss.str();
 }

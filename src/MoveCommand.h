@@ -11,6 +11,10 @@ class MoveCommand : public Command
 public:
     MoveCommand();
 
+    CmdType getType() const {
+        return CMD_MOVE;
+    }
+
     void visit(GameTable& table) const;
 
 };

@@ -13,10 +13,21 @@ public:
     PlaceCommand(int x, int y, DIRECTION direction);
 
     // Command interface
+    CmdType getType() const {
+        return CMD_PLACE;
+    }
     void visit(GameTable &table) const;
-    bool isPlaceCommand() const {
-        return true;
-    };
+
+    inline int getX() const {
+        return m_x;
+    }
+    inline int getY() const {
+        return m_y;
+    }
+
+    inline DIRECTION getDirection() const {
+        return m_direction;
+    }
 
 private:
     int m_x;

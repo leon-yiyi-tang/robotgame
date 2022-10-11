@@ -18,6 +18,9 @@ public:
     bool hasRobotPlaced();
 
     void processCommand(const Command& cmd);
+    const GameTablePtr& getGameTable() const {
+        return m_table;
+    }
 
 private:
     GameTablePtr m_table;

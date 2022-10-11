@@ -37,13 +37,13 @@ CommandPtr CommandFactory::parseCommand(const string &cmdStr)
         helper::split(argsStr, argList, ',');
     }
 
-    CmdType cmdType = translate(cmdName);
-    if (cmdType == CMD_UNKNOWN) {
+    Command::CmdType cmdType = translate(cmdName);
+    if (cmdType == Command::CMD_UNKNOWN) {
         throw CmdException("Invalid command", cmdStr.data());
     }
 
     switch (cmdType) {
-    case CMD_PLACE: {
+    case Command::CMD_PLACE: {
         if (argList.size() == 3) {
             int x = stoi(helper::trim(argList[0]));
             int y = stoi(helper::trim(argList[1]));
@@ -58,16 +58,16 @@ CommandPtr CommandFactory::parseCommand(const string &cmdStr)
         }
         break;
     }
-    case CMD_MOVE: {
+    case Command::CMD_MOVE: {
         return CommandPtr(new MoveCommand());
     }
-    case CMD_LEFT: {
+    case Command::CMD_LEFT: {
         return CommandPtr(new RotateCommand(false));
     }
-    case CMD_RIGHT: {
+    case Command::CMD_RIGHT: {
         return CommandPtr(new RotateCommand(true));
     }
-    case CMD_REPORT: {
+    case Command::CMD_REPORT: {
         return CommandPtr(new ReportCommand());
     }
 
@@ -77,21 +77,21 @@ CommandPtr CommandFactory::parseCommand(const string &cmdStr)
     throw CmdException("Invalid command", cmdStr.data());
 }
 
-CommandFactory::CmdType CommandFactory::translate(const string &cmdName)
+Command::CmdType CommandFactory::translate(const string &cmdName)
 {
     if (cmdName.compare(PLACE) == 0) {
-        return CMD_PLACE;
+        return Command::CMD_PLACE;
     } else if (cmdName.compare(MOVE) == 0) {
-        return CMD_MOVE;
+        return Command::CMD_MOVE;
     } else if (cmdName.compare(LEFT) == 0) {
-        return CMD_LEFT;
+        return Command::CMD_LEFT;
     } else if (cmdName.compare(RIGHT) == 0) {
-        return CMD_RIGHT;
+        return Command::CMD_RIGHT;
     } else if (cmdName.compare(REPORT) == 0) {
-        return CMD_REPORT;
+        return Command::CMD_REPORT;
     }
 
-    return CMD_UNKNOWN;
+    return Command::CMD_UNKNOWN;
 }
 
 }

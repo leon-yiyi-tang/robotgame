@@ -12,6 +12,9 @@ public:
     RotateCommand(bool clockWise);
 
     // Command interface
+    CmdType getType() const {
+        return m_clockWise ? CMD_RIGHT: CMD_LEFT;
+    }
     void visit(GameTable &table) const;
     string toString() const;
 

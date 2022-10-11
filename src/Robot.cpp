@@ -8,7 +8,7 @@ Robot::Robot(int x, int y, DIRECTION direction)
 
 }
 
-DIRECTION Robot::facingDirection() const
+DIRECTION Robot::getFacingDirection() const
 {
     return m_facingDirection;
 }
@@ -18,7 +18,7 @@ void Robot::setFacingDirection(DIRECTION newFacingDirection)
     this->m_facingDirection = newFacingDirection;
 }
 
-int Robot::x() const
+int Robot::getX() const
 {
     return m_x;
 }
@@ -28,7 +28,7 @@ void Robot::setX(int x)
     this->m_x = x;
 }
 
-int Robot::y() const
+int Robot::getY() const
 {
     return m_y;
 }

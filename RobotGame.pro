@@ -3,6 +3,8 @@ CONFIG += console c++17
 CONFIG -= app_bundle
 CONFIG -= qt
 
+INCLUDEPATH += ../googletest-release-1.12.1/googletest/include
+
 SOURCES += \
         src/CommandFactory.cpp \
         src/Direction.cpp \
@@ -13,7 +15,8 @@ SOURCES += \
         src/MoveCommand.cpp \
         src/PlaceCommand.cpp \
         src/Robot.cpp \
-        src/RotateCommand.cpp
+        src/RotateCommand.cpp \
+        test/TestGameApp.cpp
 
 HEADERS += \
     src/CommandFactory.h \

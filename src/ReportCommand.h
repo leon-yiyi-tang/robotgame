@@ -11,6 +11,9 @@ class ReportCommand : public Command
 public:
     ReportCommand();
     // Command interface
+    CmdType getType() const {
+        return CMD_REPORT;
+    }
     void visit(GameTable &table) const;
 
 };

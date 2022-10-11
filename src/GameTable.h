@@ -22,6 +22,9 @@ public:
     void placeRobot(int x, int y, DIRECTION direction);
     void rotateRobot(bool clockWise);
     string reportStatus() const;
+    const RobotPtr& getRobot() const {
+        return m_robot;
+    }
 
 private:
     void checkRobotPlaced();
