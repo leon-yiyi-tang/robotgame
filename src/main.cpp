@@ -15,12 +15,12 @@ void printHelp(const char* appName) {
     cout << "Usage: " << appName << " [-h]  " << endl;
     cout << "\t\t" << "-h         print this help message " << endl;
     cout << "Supported Commands:"  << endl;
-    cout << "          QUIT          " << "  quit programme " << endl;
+    cout << "          QUIT          " << "  quit this program " << endl;
     cout << "          PLACE X,Y,F   " << "  place the robot in position (X,Y), facing direction F" << endl;
     cout << "                        " << "  available directions: NORTH, SOUTH, EAST or WEST" << endl;
     cout << "          MOVE          " << "  move the robot 1 step in its facing direction  " << endl;
-    cout << "          LEFT          " << "  rotate the robot in 90 degree in anti-clockwise direction  " << endl;
-    cout << "          RIGHT         " << "  rotate the robot in 90 degree in clockwise direction  " << endl;
+    cout << "          LEFT          " << "  rotate the robot of 90 degrees in anti-clockwise direction  " << endl;
+    cout << "          RIGHT         " << "  rotate the robot of 90 degrees in clockwise direction  " << endl;
     cout << "          REPORT        " << "  report the position and facing direction of the robot  " << endl;
 }
 

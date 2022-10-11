@@ -71,3 +71,7 @@ Thumbs.db
 *.dll
 *.exe
 
+
+#notepad++ generated backup files
+*.bak
+
