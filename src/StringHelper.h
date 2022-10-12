@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 namespace helper {
 

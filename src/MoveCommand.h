@@ -3,19 +3,19 @@
 
 #include "Command.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class MoveCommand : public Command
 {
 public:
-    MoveCommand();
+    MoveCommand(){};
 
     CmdType getType() const {
         return CMD_MOVE;
     }
 
-    void visit(GameTable& table) const;
+    void execute(GameTable& table) const;
 
 };
 

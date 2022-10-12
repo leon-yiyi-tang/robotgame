@@ -1,18 +1,18 @@
 #include "PlaceCommand.h"
 #include "GameTable.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 PlaceCommand::PlaceCommand(int x, int y, DIRECTION direction)
-    :m_x(x),m_y(y),m_direction(direction)
+    : x(x), y(y), direction(direction)
 {
 
 }
 
-void PlaceCommand::visit(GameTable &table) const
+void PlaceCommand::execute(GameTable &table) const
 {
-    table.placeRobot(m_x, m_y, m_direction);
+    table.placeRobot(x, y, direction);
 }
 
 }

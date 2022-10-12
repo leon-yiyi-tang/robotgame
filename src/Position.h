@@ -2,7 +2,7 @@
 #define POSITION_H
 
 
-namespace robotgame {
+namespace RobotGame {
 
 
 struct Position {

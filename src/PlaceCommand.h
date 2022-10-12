@@ -4,7 +4,7 @@
 #include "Command.h"
 #include "Direction.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class PlaceCommand : public Command
@@ -16,23 +16,23 @@ public:
     CmdType getType() const {
         return CMD_PLACE;
     }
-    void visit(GameTable &table) const;
+    void execute(GameTable &table) const;
 
     inline int getX() const {
-        return m_x;
+        return x;
     }
     inline int getY() const {
-        return m_y;
+        return y;
     }
 
     inline DIRECTION getDirection() const {
-        return m_direction;
+        return direction;
     }
 
 private:
-    int m_x;
-    int m_y;
-    DIRECTION m_direction;
+    int x;
+    int y;
+    DIRECTION direction;
 };
 
 }

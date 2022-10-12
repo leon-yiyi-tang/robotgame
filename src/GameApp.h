@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class GameApp
@@ -19,11 +19,11 @@ public:
 
     void processCommand(const Command& cmd);
     const GameTablePtr& getGameTable() const {
-        return m_table;
+        return table;
     }
 
 private:
-    GameTablePtr m_table;
+    GameTablePtr table;
 };
 
 }

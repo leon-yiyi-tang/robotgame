@@ -1,54 +1,54 @@
 #include "Robot.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 Robot::Robot(int x, int y, DIRECTION direction)
-    :m_x(x), m_y(y), m_facingDirection(direction)
+    : x(x), y(y), facingDirection(direction)
 {
 
 }
 
 DIRECTION Robot::getFacingDirection() const
 {
-    return m_facingDirection;
+    return facingDirection;
 }
 
 void Robot::setFacingDirection(DIRECTION newFacingDirection)
 {
-    this->m_facingDirection = newFacingDirection;
+    this->facingDirection = newFacingDirection;
 }
 
 int Robot::getX() const
 {
-    return m_x;
+    return x;
 }
 
 void Robot::setX(int x)
 {
-    this->m_x = x;
+    this->x = x;
 }
 
 int Robot::getY() const
 {
-    return m_y;
+    return y;
 }
 
 void Robot::setY(int y)
 {
-    this->m_y = y;
+    this->y = y;
 }
 
 void Robot::place(int x, int y, DIRECTION facingDirection)
 {
-    this->m_x = x;
-    this->m_y = y;
-    this->m_facingDirection = facingDirection;
+    this->x = x;
+    this->y = y;
+    this->facingDirection = facingDirection;
 }
 
 void Robot::rotate(bool clockWise)
 {
-    DIRECTION direction = clockWise ? nextClockWiseDirection(m_facingDirection)
-                                    : nextAntiClockWiseDirection(m_facingDirection);
+    DIRECTION direction = clockWise ? nextClockWiseDirection(facingDirection)
+                                    : nextAntiClockWiseDirection(facingDirection);
     setFacingDirection(direction);
 }
 

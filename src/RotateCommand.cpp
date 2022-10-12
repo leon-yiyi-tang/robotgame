@@ -3,26 +3,26 @@
 #include <sstream>
 #include "GameTable.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 RotateCommand::RotateCommand(bool clockWise)
-    :m_clockWise(clockWise)
+    : clockWise(clockWise)
 {
 
 }
 
 
-void RotateCommand::visit(GameTable &table) const
+void RotateCommand::execute(GameTable &table) const
 {
-    table.rotateRobot(m_clockWise);
+    table.rotateRobot(clockWise);
 }
 
 
 string RotateCommand::toString() const
 {
     stringstream ss;
-    ss << "Rotate : " << (m_clockWise ? "right":"left");
+    ss << "Rotate : " << (clockWise ? "right" : "left");
 
     return ss.str() ;
 }

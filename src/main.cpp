@@ -9,7 +9,7 @@
 #include "NoRobotException.h"
 
 using namespace std;
-using namespace robotgame;
+using namespace RobotGame;
 
 void printHelp(const char* appName) {
     cout << "Usage: " << appName << " [-h]  " << endl;

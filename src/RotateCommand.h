@@ -3,7 +3,7 @@
 
 #include "Command.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class RotateCommand : public Command
@@ -13,14 +13,14 @@ public:
 
     // Command interface
     CmdType getType() const {
-        return m_clockWise ? CMD_RIGHT: CMD_LEFT;
+        return clockWise ? CMD_RIGHT : CMD_LEFT;
     }
-    void visit(GameTable &table) const;
+    void execute(GameTable &table) const;
     string toString() const;
 
 
 private:
-    bool m_clockWise;
+    bool clockWise;
 };
 
 }

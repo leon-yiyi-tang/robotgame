@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 
 enum DIRECTION {

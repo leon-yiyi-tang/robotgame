@@ -10,23 +10,23 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 
 GameTable::GameTable(int width, int height)
-    :m_width(width),m_height(height)
+    : width(width), height(height)
 {
 }
 
 bool GameTable::hasRobotPlaced() const
 {
-    return !!m_robot;
+    return !!robot;
 }
 
 bool GameTable::isValidPosition(const Position &pos)
 {
-    return pos.x >= MIN_X && pos.x <= m_width
-            && pos.y >= MIN_Y && pos.y <= m_height;
+    return pos.x >= MIN_X && pos.x <= width
+            && pos.y >= MIN_Y && pos.y <= height;
 }
 
 void GameTable::checkRobotPlaced()
@@ -38,9 +38,9 @@ void GameTable::checkRobotPlaced()
 
 Position GameTable::tryMoveRobot()
 {
-    int x = m_robot->getX();
-    int y = m_robot->getY();
-    DIRECTION dirc = m_robot->getFacingDirection();
+    int x = robot->getX();
+    int y = robot->getY();
+    DIRECTION dirc = robot->getFacingDirection();
 
     switch (dirc) {
     case DIRECTION_EAST:
@@ -68,9 +68,9 @@ void GameTable::moveRobot()
 
     Position newPos = tryMoveRobot();
     if (!isValidPosition(newPos)) {
-        throw CmdException("Move", "Robot reached edge, cannot move furthur");
+        throw CmdException("Move", "Robot reached edge, cannot move further");
     } else {
-        m_robot->setPosition(newPos);
+        robot->setPosition(newPos);
     }
 }
 
@@ -82,14 +82,14 @@ void GameTable::placeRobot(int x, int y, DIRECTION direction)
     } else if (direction == DIRECTION_UNKNOWN) {
         throw CmdException("Place", "Invalid direction");
     } else {
-        m_robot = RobotPtr(new Robot(x, y, direction));
+        robot = make_unique<Robot>(x, y, direction);
     }
 }
 
 void GameTable::rotateRobot(bool clockWise)
 {
     checkRobotPlaced();
-    m_robot->rotate(clockWise);
+    robot->rotate(clockWise);
 }
 
 string GameTable::reportStatus() const
@@ -99,7 +99,7 @@ string GameTable::reportStatus() const
     }
 
     stringstream ss;
-    ss << "Output:" << m_robot->getX() << "," << m_robot->getY() << "," << printDirection(m_robot->getFacingDirection());
+    ss << "Output:" << robot->getX() << "," << robot->getY() << "," << printDirection(robot->getFacingDirection());
 
     return ss.str();
 }

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class NoRobotException : public exception {

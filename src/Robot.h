@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 class Robot
 {
@@ -23,7 +23,7 @@ public:
     void setY(int y);
 
     Position getPosition() const {
-        return Position(m_x, m_y);
+        return Position(x, y);
     }
     void setPosition(const Position& pos) {
         setX(pos.x);
@@ -38,9 +38,9 @@ private:
     DIRECTION nextAntiClockWiseDirection(DIRECTION direction);
 
 private:
-    DIRECTION m_facingDirection;
-    int m_x;
-    int m_y;
+    DIRECTION facingDirection;
+    int x;
+    int y;
 };
 
 typedef unique_ptr<Robot> RobotPtr;

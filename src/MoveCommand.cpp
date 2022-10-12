@@ -2,14 +2,10 @@
 
 #include "GameTable.h"
 
-namespace robotgame {
+namespace RobotGame {
 
-MoveCommand::MoveCommand()
-{
 
-}
-
-void MoveCommand::visit(GameTable &table) const
+void MoveCommand::execute(GameTable &table) const
 {
     table.moveRobot();
 }

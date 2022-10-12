@@ -3,7 +3,7 @@
 
 #include "Command.h"
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class ReportCommand : public Command
@@ -14,7 +14,7 @@ public:
     CmdType getType() const {
         return CMD_REPORT;
     }
-    void visit(GameTable &table) const;
+    void execute(GameTable &table) const;
 
 };
 

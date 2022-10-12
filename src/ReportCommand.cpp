@@ -3,7 +3,7 @@
 #include "GameTable.h"
 #include <iostream>
 
-namespace robotgame {
+namespace RobotGame {
 
 ReportCommand::ReportCommand()
 {
@@ -11,7 +11,7 @@ ReportCommand::ReportCommand()
 }
 
 
-void ReportCommand::visit(GameTable &table) const
+void ReportCommand::execute(GameTable &table) const
 {
     std::cout << table.reportStatus() << std::endl;
 }

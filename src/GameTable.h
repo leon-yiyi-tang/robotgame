@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace robotgame {
+namespace RobotGame {
 
 
 class GameTable
@@ -23,16 +23,16 @@ public:
     void rotateRobot(bool clockWise);
     string reportStatus() const;
     const RobotPtr& getRobot() const {
-        return m_robot;
+        return robot;
     }
 
 private:
     void checkRobotPlaced();
 
 private:
-    int m_width;
-    int m_height;
-    RobotPtr m_robot;
+    int width;
+    int height;
+    RobotPtr robot;
 
 };
 

@@ -7,7 +7,7 @@
 using namespace std;
 
 
-namespace robotgame {
+namespace RobotGame {
 
 class GameTable;
 
@@ -26,7 +26,7 @@ public:
 public:
     virtual ~Command(){}
     virtual CmdType getType() const = 0;
-    virtual void visit(GameTable& table) const = 0;
+    virtual void execute(GameTable& table) const = 0;
 };
 
 typedef unique_ptr<Command> CommandPtr;
