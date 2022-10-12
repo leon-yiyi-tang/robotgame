@@ -3,7 +3,7 @@
 namespace RobotGame {
 
 Robot::Robot(int x, int y, DIRECTION direction)
-    : x(x), y(y), facingDirection(direction)
+    : position(x, y), facingDirection(direction)
 {
 
 }
@@ -20,28 +20,28 @@ void Robot::setFacingDirection(DIRECTION newFacingDirection)
 
 int Robot::getX() const
 {
-    return x;
+    return position.x;
 }
 
 void Robot::setX(int x)
 {
-    this->x = x;
+    position.x = x;
 }
 
 int Robot::getY() const
 {
-    return y;
+    return position.y;
 }
 
 void Robot::setY(int y)
 {
-    this->y = y;
+    position.y = y;
 }
 
 void Robot::place(int x, int y, DIRECTION facingDirection)
 {
-    this->x = x;
-    this->y = y;
+    this->position.x = x;
+    this->position.y = y;
     this->facingDirection = facingDirection;
 }
 

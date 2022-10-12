@@ -23,7 +23,7 @@ public:
     void setY(int y);
 
     Position getPosition() const {
-        return Position(x, y);
+        return position;
     }
     void setPosition(const Position& pos) {
         setX(pos.x);
@@ -39,8 +39,7 @@ private:
 
 private:
     DIRECTION facingDirection;
-    int x;
-    int y;
+    Position position;
 };
 
 typedef unique_ptr<Robot> RobotPtr;

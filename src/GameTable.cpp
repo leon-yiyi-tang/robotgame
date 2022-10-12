@@ -82,7 +82,11 @@ void GameTable::placeRobot(int x, int y, DIRECTION direction)
     } else if (direction == DIRECTION_UNKNOWN) {
         throw CmdException("Place", "Invalid direction");
     } else {
-        robot = make_unique<Robot>(x, y, direction);
+        if (!robot) {
+            robot = make_unique<Robot>(x, y, direction);
+        } else {
+            robot->place(x, y, direction);
+        }
     }
 }
 
