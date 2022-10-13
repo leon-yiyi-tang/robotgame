@@ -16,7 +16,6 @@ namespace RobotGame {
 
     class TestGameApp : public ::testing::Test {
 
-
     public:
         void testParsePlaceCommand(const string &cmdStr, int x, int y, DIRECTION direction) {
             CommandPtr cmd = CommandFactory::parseCommand(cmdStr);
@@ -93,10 +92,7 @@ namespace RobotGame {
             const RobotPtr &pRobot = pTable->getRobot();
 
             EXPECT_TRUE(pRobot->getFacingDirection() == expectDirection);
-
         }
-
-
 
         // Test interface
     protected:

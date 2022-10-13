@@ -6,25 +6,20 @@
 namespace RobotGame {
 
 
-RotateCommand::RotateCommand(bool clockWise)
-    : clockWise(clockWise)
-{
+    RotateCommand::RotateCommand(bool clockWise)
+            : clockWise(clockWise) {
 
-}
+    }
 
+    void RotateCommand::execute(GameTable &table) const {
+        table.rotateRobot(clockWise);
+    }
 
-void RotateCommand::execute(GameTable &table) const
-{
-    table.rotateRobot(clockWise);
-}
+    string RotateCommand::toString() const {
+        stringstream ss;
+        ss << "Rotate : " << (clockWise ? "right" : "left");
 
-
-string RotateCommand::toString() const
-{
-    stringstream ss;
-    ss << "Rotate : " << (clockWise ? "right" : "left");
-
-    return ss.str() ;
-}
+        return ss.str();
+    }
 
 }

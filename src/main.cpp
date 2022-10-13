@@ -11,10 +11,10 @@
 using namespace std;
 using namespace RobotGame;
 
-void printHelp(const char* appName) {
+void printHelp(const char *appName) {
     cout << "Usage: " << appName << " [-h]  " << endl;
     cout << "\t\t" << "-h         print this help message " << endl;
-    cout << "Supported Commands:"  << endl;
+    cout << "Supported Commands:" << endl;
     cout << "          QUIT          " << "  quit this program " << endl;
     cout << "          PLACE X,Y,F   " << "  place the robot in position (X,Y), facing direction F" << endl;
     cout << "                        " << "  available directions: NORTH, SOUTH, EAST or WEST" << endl;
@@ -35,12 +35,11 @@ void parseArgs(int argc) {
 
 #define QUIT "QUIT"
 
-bool isQuitCmd(const string& cmd){
+bool isQuitCmd(const string &cmd) {
     return cmd.compare(QUIT) == 0;
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char **argv) {
     parseArgs(argc);
     if (bPrintHelp) {
         printHelp(argv[0]);
@@ -53,7 +52,7 @@ int main(int argc, char** argv)
     do {
         cout << "Please enter a command:" << endl;
         getline(cin, line);
-        if ((!cin) || isQuitCmd(line) ) {
+        if ((!cin) || isQuitCmd(line)) {
             break;
         }
 
@@ -62,14 +61,13 @@ int main(int argc, char** argv)
         }
 
         try {
-
             CommandPtr pCmd = CommandFactory::parseCommand(line);
             if (pCmd) {
                 app.processCommand(*pCmd);
             }
-        } catch(NoRobotException e1) {
+        } catch (NoRobotException e1) {
             cout << e1.what() << endl;
-        } catch(CmdException cmdException) {
+        } catch (CmdException cmdException) {
             cout << cmdException.toString() << endl;
         } catch (exception e2) {
             cout << e2.what() << endl;

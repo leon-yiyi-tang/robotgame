@@ -6,18 +6,14 @@
 
 namespace RobotGame {
 
+    class CommandFactory {
+    public:
+        static CommandPtr parseCommand(const string &cmdStr);
+        static Command::CmdType translate(const string &cmdName);
 
-class CommandFactory
-{
-public:
-
-    static CommandPtr parseCommand(const string& cmdStr);
-    static Command::CmdType translate(const string& cmdName);
-
-private:
-    static CommandPtr parsePlaceCommand(const string& cmdStr, const std::vector<string>& argList);
-
-};
+    private:
+        static CommandPtr parsePlaceCommand(const string &cmdStr, const std::vector<string> &argList);
+    };
 
 }
 

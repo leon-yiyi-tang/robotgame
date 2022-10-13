@@ -5,16 +5,9 @@
 
 namespace RobotGame {
 
-ReportCommand::ReportCommand()
-{
-
-}
-
-
-void ReportCommand::execute(GameTable &table) const
-{
-    std::cout << table.reportStatus() << std::endl;
-}
+    void ReportCommand::execute(GameTable &table) const {
+        std::cout << table.reportStatus() << std::endl;
+    }
 
 }
 

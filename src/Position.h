@@ -4,14 +4,13 @@
 
 namespace RobotGame {
 
-
-struct Position {
-    int x;
-    int y;
-public:
-    Position(int x, int y)
-        :x(x),y(y){}
-};
+    struct Position {
+        int x;
+        int y;
+    public:
+        Position(int x, int y)
+                : x(x), y(y) {}
+    };
 
 }
 

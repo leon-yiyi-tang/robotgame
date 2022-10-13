@@ -5,19 +5,16 @@
 
 namespace RobotGame {
 
+    class MoveCommand : public Command {
+    public:
+        MoveCommand() = default;
 
-class MoveCommand : public Command
-{
-public:
-    MoveCommand(){};
+        CmdType getType() const {
+            return CMD_MOVE;
+        }
 
-    CmdType getType() const {
-        return CMD_MOVE;
-    }
-
-    void execute(GameTable& table) const;
-
-};
+        void execute(GameTable &table) const;
+    };
 
 }
 

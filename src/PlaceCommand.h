@@ -6,34 +6,34 @@
 
 namespace RobotGame {
 
+    class PlaceCommand : public Command {
+    public:
+        PlaceCommand(int x, int y, DIRECTION direction);
 
-class PlaceCommand : public Command
-{
-public:
-    PlaceCommand(int x, int y, DIRECTION direction);
+        // Command interface
+        CmdType getType() const {
+            return CMD_PLACE;
+        }
 
-    // Command interface
-    CmdType getType() const {
-        return CMD_PLACE;
-    }
-    void execute(GameTable &table) const;
+        void execute(GameTable &table) const;
 
-    inline int getX() const {
-        return x;
-    }
-    inline int getY() const {
-        return y;
-    }
+        inline int getX() const {
+            return x;
+        }
 
-    inline DIRECTION getDirection() const {
-        return direction;
-    }
+        inline int getY() const {
+            return y;
+        }
 
-private:
-    int x;
-    int y;
-    DIRECTION direction;
-};
+        inline DIRECTION getDirection() const {
+            return direction;
+        }
+
+    private:
+        int x;
+        int y;
+        DIRECTION direction;
+    };
 
 }
 

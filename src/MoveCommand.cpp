@@ -4,11 +4,9 @@
 
 namespace RobotGame {
 
-
-void MoveCommand::execute(GameTable &table) const
-{
-    table.moveRobot();
-}
+    void MoveCommand::execute(GameTable &table) const {
+        table.moveRobot();
+    }
 
 }
 

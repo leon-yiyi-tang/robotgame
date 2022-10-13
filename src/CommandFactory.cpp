@@ -8,6 +8,9 @@
 #include "RotateCommand.h"
 #include "ReportCommand.h"
 
+#include <memory>
+
+using namespace std;
 
 static const char *PLACE = "PLACE";
 static const char *MOVE = "MOVE";
@@ -39,18 +42,17 @@ namespace RobotGame {
                 return parsePlaceCommand(cmdStr, argList);
             }
             case Command::CMD_MOVE: {
-                return CommandPtr(new MoveCommand());
+                return make_unique<MoveCommand>();
             }
             case Command::CMD_LEFT: {
-                return CommandPtr(new RotateCommand(false));
+                return make_unique<RotateCommand>(false);
             }
             case Command::CMD_RIGHT: {
-                return CommandPtr(new RotateCommand(true));
+                return make_unique<RotateCommand>(true);
             }
             case Command::CMD_REPORT: {
-                return CommandPtr(new ReportCommand());
+                return make_unique<ReportCommand>();
             }
-
             default:
                 break;
         }
@@ -81,8 +83,7 @@ namespace RobotGame {
             if (direction == DIRECTION_UNKNOWN) {
                 throw CmdException("Invalid command", cmdStr.data());
             }
-
-            return CommandPtr(new PlaceCommand(x, y, direction));
+            return make_unique<PlaceCommand>(x, y, direction);
         } else {
             throw CmdException("Invalid command", cmdStr.data());
         }

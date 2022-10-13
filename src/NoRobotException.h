@@ -7,15 +7,14 @@ using namespace std;
 
 namespace RobotGame {
 
+    class NoRobotException : public exception {
 
-class NoRobotException : public exception {
+    public:
+        const char *what() const throw() {
+            return "Robot is not placed yet.";
+        }
 
-public:
-    const char * what () const throw () {
-        return "Robot is not placed yet.";
-    }
-
-};
+    };
 
 }
 

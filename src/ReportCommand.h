@@ -6,17 +6,17 @@
 namespace RobotGame {
 
 
-class ReportCommand : public Command
-{
-public:
-    ReportCommand();
-    // Command interface
-    CmdType getType() const {
-        return CMD_REPORT;
-    }
-    void execute(GameTable &table) const;
+    class ReportCommand : public Command {
+    public:
+        ReportCommand() = default;
+        // Command interface
+        CmdType getType() const {
+            return CMD_REPORT;
+        }
 
-};
+        void execute(GameTable &table) const;
+
+    };
 
 }
 

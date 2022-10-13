@@ -9,34 +9,39 @@ using namespace std;
 
 namespace RobotGame {
 
+    class GameTable {
+    public:
+        GameTable(int width, int height);
 
-class GameTable
-{
-public:
-    GameTable(int width, int height);
+        bool hasRobotPlaced() const;
 
-    bool hasRobotPlaced() const;
-    bool isValidPosition(const Position& pos);
-    Position tryMoveRobot();
-    void moveRobot();
-    void placeRobot(int x, int y, DIRECTION direction);
-    void rotateRobot(bool clockWise);
-    string reportStatus() const;
-    const RobotPtr& getRobot() const {
-        return robot;
-    }
+        bool isValidPosition(const Position &pos);
 
-private:
-    void checkRobotPlaced();
+        Position tryMoveRobot() const;
 
-private:
-    int width;
-    int height;
-    RobotPtr robot;
+        void moveRobot();
 
-};
+        void placeRobot(int x, int y, DIRECTION direction);
 
-typedef unique_ptr<GameTable> GameTablePtr;
+        void rotateRobot(bool clockWise);
+
+        string reportStatus() const;
+
+        const RobotPtr &getRobot() const {
+            return robot;
+        }
+
+    private:
+        void checkRobotPlaced();
+
+    private:
+        int width;
+        int height;
+        RobotPtr robot;
+
+    };
+
+    typedef unique_ptr<GameTable> GameTablePtr;
 
 }
 

@@ -20,7 +20,6 @@ public:
 
     }
 
-
     const char * what () const throw () {
         stringstream ss;
         ss << cmd << ": " << msg;

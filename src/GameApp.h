@@ -9,22 +9,21 @@ using namespace std;
 
 namespace RobotGame {
 
+    class GameApp {
+    public:
+        GameApp();
 
-class GameApp
-{
-public:
-    GameApp();
+        bool hasRobotPlaced();
 
-    bool hasRobotPlaced();
+        void processCommand(const Command &cmd);
 
-    void processCommand(const Command& cmd);
-    const GameTablePtr& getGameTable() const {
-        return table;
-    }
+        const GameTablePtr &getGameTable() const {
+            return table;
+        }
 
-private:
-    GameTablePtr table;
-};
+    private:
+        GameTablePtr table;
+    };
 
 }
 

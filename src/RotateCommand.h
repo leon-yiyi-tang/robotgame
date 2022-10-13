@@ -6,22 +6,22 @@
 namespace RobotGame {
 
 
-class RotateCommand : public Command
-{
-public:
-    RotateCommand(bool clockWise);
+    class RotateCommand : public Command {
+    public:
+        explicit RotateCommand(bool clockWise);
 
-    // Command interface
-    CmdType getType() const {
-        return clockWise ? CMD_RIGHT : CMD_LEFT;
-    }
-    void execute(GameTable &table) const;
-    string toString() const;
+        // Command interface
+        CmdType getType() const {
+            return clockWise ? CMD_RIGHT : CMD_LEFT;
+        }
 
+        void execute(GameTable &table) const;
 
-private:
-    bool clockWise;
-};
+        string toString() const;
+
+    private:
+        bool clockWise;
+    };
 
 }
 
